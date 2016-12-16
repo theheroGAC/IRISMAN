@@ -1368,7 +1368,7 @@ int patch_exe_error_09(char *path_exe)
     if(is_ntfs_path(path_exe)) return 0;
 
     u16 fw_421 = 42100;
-    u16 fw_480 = 48000;
+    u16 fw_480 = 48100;
     int offset_fw;
     s32 ret;
     u64 bytesread = 0;
@@ -1380,7 +1380,7 @@ int patch_exe_error_09(char *path_exe)
 
     sysLv2FsChmod(path_exe, FS_S_IFMT | 0777);
 
-    if(firmware >= 0x480C) return SUCCESS;
+    if(firmware >= 0x481C) return SUCCESS;
 
     // open self/sprx and changes the fw version
     ret = sysLv2FsOpen( path_exe, SYS_O_RDWR, &file, 0, NULL, 0 );
@@ -1417,7 +1417,7 @@ int patch_exe_error_09(char *path_exe)
 
                         if(ret == SUCCESS && ver > cur_firm)
                         {
-                            if(ver > fw_421 && (firmware >= 0x421C && firmware < 0x480C))
+                            if(ver > fw_421 && (firmware >= 0x421C && firmware < 0x481C))
                             {
                                 sysLv2FsWrite( file, &cur_firm, 0x2, &written );
                                 flag = 1; //patch applied

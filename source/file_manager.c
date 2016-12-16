@@ -7643,7 +7643,7 @@ int file_manager(char *pathw1, char *pathw2)
                             sprintf(TEMP_PATH, "http://127.0.0.1/%s/USRDIR/temp.html", self_path);
                         }
 
-                        char* launchargv[1];
+                        char* launchargv[2];
                         memset(launchargv, 0, sizeof(launchargv));
 
                         int len = strlen(temp_buffer);
@@ -8258,7 +8258,7 @@ int file_manager(char *pathw1, char *pathw2)
                             sprintf(TEMP_PATH, "http://127.0.0.1/%s/USRDIR/temp.html", self_path);
                         }
 
-                        char* launchargv[1];
+                        char* launchargv[2];
                         memset(launchargv, 0, sizeof(launchargv));
 
                         int len = strlen(temp_buffer);
